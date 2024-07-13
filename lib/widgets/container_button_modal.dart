@@ -24,7 +24,7 @@ class ContainerButtonModel extends StatelessWidget {
         borderRadius: BorderRadius.circular(20)
       ),
       child: Center(
-        child: Text(itext!,style: TextStyle(
+        child: Text(itext!,style: const TextStyle(
           color: Colors.white,
           fontSize: 15,
           fontWeight: FontWeight.bold

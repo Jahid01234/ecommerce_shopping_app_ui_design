@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import '../widgets/container_button_modal.dart';
 import 'order_success_screen.dart';
 
@@ -13,76 +12,122 @@ class OrderConfirmScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         foregroundColor: Colors.black,
-        title: Text("Confirm Order"),
+        title: const Text("Confirm Order"),
         centerTitle: true,
-        leading: BackButton(),
+        leading: const BackButton(),
         elevation: 0,
       ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-
                 // The 1st Shipping Address part
-                SizedBox(height: 10,),
-                Text("Shipping Address",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600)),
-                SizedBox(height: 10,),
+                const SizedBox(
+                  height: 10,
+                ),
+                const Text(
+                  "Shipping Address",
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
                 Container(
-                  padding: EdgeInsets.all(8),
-                  height:110 ,
+                  padding: const EdgeInsets.only(left: 5, right: 5, top: 2),
+                  height: 110,
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        blurRadius: 4,
-                        spreadRadius: 2,
-                        offset: Offset(0,3)
-                      )
-                    ]
-                  ),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            blurRadius: 4,
+                            spreadRadius: 2,
+                            offset: const Offset(0, 3))
+                      ]),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("Dear Jahid",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold)),
+                          const Text(
+                            "Dear Jahid",
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                           TextButton(
-                              onPressed: (){},
-                              child: Text("Change",style: TextStyle(fontSize: 15,color: Colors.deepOrangeAccent)),
+                            onPressed: () {},
+                            child: const Text(
+                              "Change",
+                              style: TextStyle(
+                                fontSize: 15,
+                                color: Colors.deepOrangeAccent,
+                              ),
+                            ),
                           )
                         ],
                       ),
-                      SizedBox(height: 7),
-                      Text("Nill Villa,House-10",style: TextStyle(fontSize: 14,)),
-                      SizedBox(height: 3,),
-                      Text("Mirpur-2,Road No-10,Dhaka",style: TextStyle(fontSize: 14,)),
-
+                      const SizedBox(height: 7),
+                      const Text(
+                        "Nill Villa,House-10",
+                        style: TextStyle(
+                          fontSize: 14,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 3,
+                      ),
+                      const Text(
+                        "Mirpur-2,Road No-10,Dhaka",
+                        style: TextStyle(
+                          fontSize: 14,
+                        ),
+                      ),
                     ],
                   ),
                 ),
 
                 // The 2nd Payment Method
-                SizedBox(height: 30,),
+                const SizedBox(
+                  height: 30,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Payment Method",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600)),
+                    const Text(
+                      "Payment Method",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
                     TextButton(
-                      onPressed: (){},
-                      child: Text("Change",style: TextStyle(fontSize: 15,color: Colors.deepOrangeAccent)),
+                      onPressed: () {},
+                      child: const Text(
+                        "Change",
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Colors.deepOrangeAccent,
+                        ),
+                      ),
                     )
                   ],
                 ),
 
                 // The 3rd masterCard Change
-                SizedBox(height: 30,),
+                const SizedBox(
+                  height: 30,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -97,23 +142,36 @@ class OrderConfirmScreen extends StatelessWidget {
                                 color: Colors.grey.withOpacity(0.5),
                                 blurRadius: 4,
                                 spreadRadius: 2,
-                                offset: Offset(0,3)
-                            )
-                          ]
-                      ),
+                                offset: const Offset(0, 3))
+                          ]),
                       child: Image.asset("assets/images/mastercard.jpg"),
                     ),
-                    Text("*** *** *** 3497",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600)),
-                    
+                    const Text(
+                      "*** *** *** 3497",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
                   ],
                 ),
 
                 // The 4th Delivery Method
-                SizedBox(height: 30,),
-                Text("Delivery Method",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600)),
+                const SizedBox(
+                  height: 30,
+                ),
+                const Text(
+                  "Delivery Method",
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
 
                 // The 5th Delivery Method card
-                SizedBox(height: 10,),
+                const SizedBox(
+                  height: 10,
+                ),
                 Row(
                   children: [
                     Container(
@@ -127,21 +185,27 @@ class OrderConfirmScreen extends StatelessWidget {
                                 color: Colors.grey.withOpacity(0.5),
                                 blurRadius: 4,
                                 spreadRadius: 2,
-                                offset: Offset(0,3)
-                            )
-                          ]
-                      ),
+                                offset: const Offset(0, 3))
+                          ]),
                       child: Column(
                         children: [
-                          Image.asset("assets/images/icon3.png",height: 30,width: 60,),
-                          Text("2-7 Days",style: TextStyle(fontSize: 12,)),
-
+                          Image.asset(
+                            "assets/images/icon3.png",
+                            height: 30,
+                            width: 60,
+                          ),
+                          const Text(
+                            "2-7 Days",
+                            style: TextStyle(
+                              fontSize: 12,
+                            ),
+                          ),
                         ],
                       ),
                     ),
-
-                    SizedBox(width: 15,),
-
+                    const SizedBox(
+                      width: 15,
+                    ),
                     Container(
                       height: 60,
                       width: 100,
@@ -153,69 +217,126 @@ class OrderConfirmScreen extends StatelessWidget {
                                 color: Colors.grey.withOpacity(0.5),
                                 blurRadius: 4,
                                 spreadRadius: 2,
-                                offset: Offset(0,3)
-                            )
-                          ]
-                      ),
-                      child: Column(
+                                offset: const Offset(0, 3))
+                          ]),
+                      child: const Column(
                         children: [
-                          Icon(CupertinoIcons.house,color: Colors.cyan,size: 35,),
-                          Text("2-5 Days",style: TextStyle(fontSize: 12,)),
-
+                          Icon(
+                            CupertinoIcons.house,
+                            color: Colors.cyan,
+                            size: 35,
+                          ),
+                          Text(
+                            "2-5 Days",
+                            style: TextStyle(
+                              fontSize: 12,
+                            ),
+                          ),
                         ],
                       ),
                     ),
-
                   ],
                 ),
 
                 // The 6thSub-Total part
-                SizedBox(height: 50,),
-                Row(
+                const SizedBox(
+                  height: 50,
+                ),
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Sub-Total",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: Colors.grey),),
-                    Text("\$800.00",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
+                    Text(
+                      "Sub-Total",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    Text(
+                      "\$800.00",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ],
                 ),
 
-
                 // The 7th Fee shopping text part
-                SizedBox(height: 10,),
-                Row(
+                const SizedBox(
+                  height: 10,
+                ),
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Shopping Fee",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: Colors.grey),),
-                    Text("\$15.00",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
+                    Text(
+                      "Shopping Fee",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    Text(
+                      "\$15.00",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ],
                 ),
 
                 // The 8th Divide  part
-                Divider(thickness: 2,color: Colors.cyan,),
+                const Divider(
+                  thickness: 2,
+                  color: Colors.cyan,
+                ),
 
                 // The 9th Total Payment text part
-                SizedBox(height: 2,),
-                Row(
+                const SizedBox(
+                  height: 2,
+                ),
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Total Payment",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: Colors.grey),),
-                    Text("\$815.00",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: Colors.red),),
+                    Text(
+                      "Total Payment",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    Text(
+                      "\$815.00",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.red,
+                      ),
+                    ),
                   ],
                 ),
 
                 // The 10th Confirm Payment button part
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 InkWell(
-                    onTap: (){
-                       Navigator.push(context, MaterialPageRoute(builder: (context)=>OrderSuccessScreen ()));
-                    },
-                    child: ContainerButtonModel(
-                      containerWidth: MediaQuery.of(context).size.width,
-                      bgColor: Colors.red,
-                      itext: "Confirm Order",
-                    )
-                )
-
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const OrderSuccessScreen(),
+                      ),
+                    );
+                  },
+                  child: ContainerButtonModel(
+                    containerWidth: MediaQuery.of(context).size.width,
+                    bgColor: Colors.red,
+                    itext: "Confirm Order",
+                  ),
+                ),
               ],
             ),
           ),

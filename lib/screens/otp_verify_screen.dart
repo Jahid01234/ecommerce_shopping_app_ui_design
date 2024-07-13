@@ -11,7 +11,6 @@ class OTPVerifyScreen extends StatefulWidget {
 }
 
 class _OTPVerifyScreenState extends State<OTPVerifyScreen> {
-
   BoxDecoration get _pinPutDecoration {
     return BoxDecoration(
       border: Border.all(color: Colors.cyan),
@@ -19,7 +18,8 @@ class _OTPVerifyScreenState extends State<OTPVerifyScreen> {
     );
   }
 
-  TextEditingController textEditingController = new TextEditingController(text: "");
+  final TextEditingController textEditingController =
+      TextEditingController(text: "");
 
   @override
   Widget build(BuildContext context) {
@@ -29,31 +29,42 @@ class _OTPVerifyScreenState extends State<OTPVerifyScreen> {
         elevation: 0,
         foregroundColor: Colors.black,
       ),
-      body:  SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
-            //crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-
               // 1st Header text part
-              const SizedBox(height: 10,),
+              const SizedBox(
+                height: 10,
+              ),
               const Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text("Enter OTP",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),
-                  )),
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Enter OTP",
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
 
               // The 2nd body text part
-              const SizedBox(height: 50,),
-              Align(
+              const SizedBox(
+                height: 50,
+              ),
+              const Align(
                 alignment: Alignment.centerLeft,
-                child: const Text(
-                    "Please enter the OTP code that we have sent you to your number. Please check your number and enter here OTP to verify.",
-                    style: TextStyle(fontSize: 15)),
+                child: Text(
+                  "Please enter the OTP code that we have sent you to your number. Please check your number and enter here OTP to verify.",
+                  style: TextStyle(fontSize: 15),
+                ),
               ),
 
               // The 3rd OTP part
-              const SizedBox(height: 40,),
+              const SizedBox(
+                height: 40,
+              ),
               TextFieldPin(
                   textController: textEditingController,
                   autoFocus: false,
@@ -62,39 +73,39 @@ class _OTPVerifyScreenState extends State<OTPVerifyScreen> {
                   defaultBoxSize: 46.0,
                   margin: 10,
                   selectedBoxSize: 46.0,
-                  textStyle: TextStyle(fontSize: 16),
+                  textStyle: const TextStyle(fontSize: 16),
                   defaultDecoration: _pinPutDecoration.copyWith(
-                      border: Border.all(color: Colors.black)
-                  ),
+                      border: Border.all(color: Colors.black)),
                   selectedDecoration: _pinPutDecoration,
                   onChange: (code) {
-                    setState(() {
-
-                    });
-                  }
-                  ),
-
-
+                    setState(() {});
+                  }),
 
               // the 4th Elevated Button part
-              const SizedBox(height: 50,),
+              const SizedBox(
+                height: 50,
+              ),
               ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>RecoverScreen()));
-                },
-                child: Text(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFFDB3022),
+                  minimumSize: const Size.fromHeight(55),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(0),
+                  ),
+                ),
+                child: const Text(
                   "Verify",
                   style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xFFDB3022),
-                    minimumSize: Size.fromHeight(55),
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0))),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const RecoverScreen(),
+                    ),
+                  );
+                },
               ),
-
-
-
-
             ],
           ),
         ),

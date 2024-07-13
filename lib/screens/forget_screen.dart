@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'recovery_screen.dart';
 
 class ForgetScreen extends StatefulWidget {
@@ -10,10 +9,12 @@ class ForgetScreen extends StatefulWidget {
   State<ForgetScreen> createState() => _ForgetScreenState();
 }
 
- TextEditingController emailController = TextEditingController();
- bool clearButton = false;
+
 
 class _ForgetScreenState extends State<ForgetScreen> {
+  final TextEditingController emailController = TextEditingController();
+  bool clearButton = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,22 +25,25 @@ class _ForgetScreenState extends State<ForgetScreen> {
       ),
       body:  SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // 1st Header text part
-              SizedBox(height: 10,),
-              Text("Forget Password",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
+              const SizedBox(height: 10,),
+              const Text("Forget Password",style: TextStyle(fontSize: 30,
+                fontWeight: FontWeight.bold,
+              ),
+              ),
 
               // 2nd body  text part
-              SizedBox(height: 50,),
-              Text(
+              const SizedBox(height: 50,),
+              const Text(
                   "Please enter your email address. You will receive a link to create or set a new password via email.",
-                style: TextStyle(fontSize: 15)),
+                style: TextStyle(fontSize: 15),),
 
               // 3rd TextFormField part
-              SizedBox(height: 50,),
+              const SizedBox(height: 50,),
               TextFormField(
                 controller: emailController,
                 onChanged: (value){
@@ -51,8 +55,8 @@ class _ForgetScreenState extends State<ForgetScreen> {
                 },
                 decoration: InputDecoration(
                     labelText: "Email",
-                    border: OutlineInputBorder(),
-                    prefixIcon: Icon(Icons.email),
+                    border: const OutlineInputBorder(),
+                    prefixIcon: const Icon(Icons.email),
                     suffixIcon: InkWell
                       (
                        onTap: (){
@@ -60,29 +64,35 @@ class _ForgetScreenState extends State<ForgetScreen> {
                            emailController.clear();
                          });
                        },
-                        child: Icon(CupertinoIcons.multiply,color: Colors.black,)
+                        child: const Icon(
+                          CupertinoIcons.multiply,color: Colors.black,
+                        )
                     ),
-                    )
+                    ),
                 ),
 
-              SizedBox(height: 50),
+              const SizedBox(height: 50),
 
               // the 4th Elevated Button part
               ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>RecoverScreen()));
-                },
-                child: Text(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor:const Color(0xFFDB3022),
+                  minimumSize: const Size.fromHeight(55),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(0),
+                  ),
+                ),
+                child: const Text(
                   "Send Code",
                   style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xFFDB3022),
-                    minimumSize: Size.fromHeight(55),
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0))),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context)=>const RecoverScreen(),
+                  ),
+                  );
+                },
               ),
-
-
             ],
           ),
         ),
